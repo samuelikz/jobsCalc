@@ -7,6 +7,9 @@ server.set('view engine', 'ejs') // usar template, motor v8 ejs
 //habilitar arquivos statics
 server.use(express.static("public")); //express aqui esta todo arquivo static esta aqui
 
+//Usar o req.body
+server.use(express.urlencoded({ extended: true }))
+
 //habilitar rotas
 server.use(routes);
 
