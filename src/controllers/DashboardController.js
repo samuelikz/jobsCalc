@@ -5,10 +5,10 @@ const basePath = process.cwd() + "/src/views/" // caminho ./src
 
 module.exports = {
     
-    index(req, res) {
+    async index(req, res) {
         // ajustes no jobs
-        const jobs = Job.get(); // Trazer jobs
-        const profile = Profile.get();
+        const jobs = await Job.get(); // Trazer jobs
+        const profile = await Profile.get();
         
         let statusCount = {
             progress: 0,

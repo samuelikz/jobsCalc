@@ -2,11 +2,11 @@ const Profile = require('../model/Profile')
 const basePath = process.cwd() + "/src/views/" // caminho ./src
 
 module.exports = {
-    index(req, res) {
-        return res.render(basePath + "profile", { profile: Profile.get() }) // Pegar arquivos do Profile em models
+     async index(req, res) {
+        return res.render(basePath + "profile", { profile: await Profile.get() }) // Pegar arquivos do Profile em models
     },
 
-    update(req, res) {
+    async update(req, res) {
         // req.body para pegar os dados
         const data = req.body
         // Definir quantas semanas tem um ano
@@ -20,8 +20,10 @@ module.exports = {
         //qual sera o valor da minha hora 
         const valueHour = data["monthly-budget"] / monthlyTotalHours
 
-        Profile.update({
-            ...Profile.get(),
+        const profile = await Profile.get()
+
+        await Profile.update({
+            ...profile,
             ...req.body,
             "value-hour": valueHour
         }) 
