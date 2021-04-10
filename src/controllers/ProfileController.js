@@ -1,7 +1,6 @@
 const Profile = require('../model/Profile')
 const basePath = process.cwd() + "/src/views/" // caminho ./src
 
-
 module.exports = {
     index(req, res) {
         return res.render(basePath + "profile", { profile: Profile.get() }) // Pegar arquivos do Profile em models

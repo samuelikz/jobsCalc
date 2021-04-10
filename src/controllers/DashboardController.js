@@ -3,7 +3,6 @@ const JobUtils = require('../utils/JobUtils')
 const Profile = require('../model/Profile')
 const basePath = process.cwd() + "/src/views/" // caminho ./src
 
-
 module.exports = {
     
     index(req, res) {
@@ -24,7 +23,6 @@ module.exports = {
             const remaining = JobUtils.remainingDays(job)
             const status = remaining <= 0 ? 'done' : 'progress'
             
-
             //somando a quantidade de status
             statusCount[status] += 1;
 
@@ -49,7 +47,6 @@ module.exports = {
         //menos 
 
         // a quantidade de horas/dia em cada job em progress
-
 
         return res.render(basePath + "index", { profile: profile, jobs: updatedJobs, statusCount: statusCount, freeHours: freeHours })
     }

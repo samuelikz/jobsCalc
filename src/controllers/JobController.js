@@ -3,7 +3,6 @@ const JobUtils = require('../utils/JobUtils')
 const Profile = require('../model/Profile')
 const basePath = process.cwd() + "/src/views/" // caminho ./src
 
-
 module.exports = {
 
     create(req, res){

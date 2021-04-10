@@ -4,8 +4,6 @@ const ProfileController = require('../controllers/ProfileController') //importar
 const JonController = require('../controllers/JobController') //importar job Controllers
 const DashController = require('../controllers/DashboardController') //importar dasBoard Controllers
 
-
-
 routes.get('/', DashController.index); // buscar no diretorio raiz 
 routes.get('/job', JonController.create); // Formulario para criar jobs
 routes.post('/job', JonController.save); // Salvar dados rota post /job 
