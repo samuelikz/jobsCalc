@@ -4,6 +4,6 @@ const { open } = require('sqlite') //importar apenas a funcionalidade open
 module.exports = () =>
 //Abrindo conexão com o banco
 open({
-    filename: 'src/db/database.sqlite',
-    driver: sqlite3.Database
+    filename: 'src/db/database.sqlite', //local do banco
+    driver: sqlite3.Database //banco utilizado
 });

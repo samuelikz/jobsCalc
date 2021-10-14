@@ -1,9 +1,9 @@
-const Database = require('./config')
+const Database = require('./config') //chamar configuração do banco
 
-const initDb = {
+const initDb = { // criar tabela profile
     async init() {
 
-        const db = await Database()
+        const db = await Database() 
 
         await db.exec(`CREATE TABLE profile(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
