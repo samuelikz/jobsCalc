@@ -13,4 +13,4 @@ server.use(express.urlencoded({ extended: true }))
 //habilitar rotas
 server.use(routes);
 
-server.listen(3000, () => console.log('Servidor funcionando')); //Função para ligar o servidor
+server.listen(3000, () => console.log('Servidor funcionando http://localhost:3000')); //Função para ligar o servidor
