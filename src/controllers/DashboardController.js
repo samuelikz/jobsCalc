@@ -1,14 +1,14 @@
-const Job = require('../model/Job')
-const JobUtils = require('../utils/JobUtils')
-const Profile = require('../model/Profile')
+const Job = require('../model/Job') // importar modelo Jobs
+const JobUtils = require('../utils/JobUtils') // importar calculos jobs
+const Profile = require('../model/Profile') // importar profile
 const basePath = process.cwd() + "/src/views/" // caminho ./src
 
 module.exports = {
     
     async index(req, res) {
         // ajustes no jobs
-        const jobs = await Job.get(); // Trazer jobs
-        const profile = await Profile.get();
+        const jobs = await Job.get(); // Trazer informações de Trabalhos
+        const profile = await Profile.get(); // Trazer informações do Perfil
         
         let statusCount = {
             progress: 0,
